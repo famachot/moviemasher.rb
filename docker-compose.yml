@@ -1,0 +1,14 @@
+version: '2'
+services:
+  moviemasher_rb:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: moviemasher/moviemasher.rb:development
+
+    volumes:
+      - "./tmp/error:/tmp/moviemasher/error"
+      - "./tmp/render:/tmp/moviemasher/render"
+      - "./:/mnt/moviemasher.rb"
+    command: process_loop -v debug --render_save=1
+    tty: true
