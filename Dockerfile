@@ -67,7 +67,7 @@ RUN \
 # pull, configure, make and install x264
 RUN \
   cd /data; \
-  git clone git://git.videolan.org/x264.git; \
+  git clone https://code.videolan.org/videolan/x264.git; \
   cd /data/x264; \
   git checkout ba24899b0bf23345921da022f7a51e0c57dbe73d; \
   ./configure --prefix=/usr --enable-shared; \
@@ -82,26 +82,26 @@ RUN \
   tar -xzvf ffmpeg-3.4.1.tar.gz; \
   cd /data/ffmpeg-3.4.1; \
   ./configure \
-    --enable-frei0r \
-    --enable-gpl \
-    --enable-libfontconfig \
-    --enable-libfreetype \
-    --enable-libfribidi \
-    --enable-libmp3lame \
-    --enable-libopencore-amrnb \
-    --enable-libopencore-amrwb \
-    --enable-libopenjpeg \
-    --enable-libspeex \
-    --enable-libtheora \
-    --enable-libvorbis \
-    --enable-libvpx \
-    --enable-libx264 \
-    --enable-libxvid \
-    --enable-postproc \
-    --enable-pthreads \
-    --enable-version3 \
-    --enable-zlib \
-    --extra-cflags="-I/usr/local/include/openjpeg" \
+  --enable-frei0r \
+  --enable-gpl \
+  --enable-libfontconfig \
+  --enable-libfreetype \
+  --enable-libfribidi \
+  --enable-libmp3lame \
+  --enable-libopencore-amrnb \
+  --enable-libopencore-amrwb \
+  --enable-libopenjpeg \
+  --enable-libspeex \
+  --enable-libtheora \
+  --enable-libvorbis \
+  --enable-libvpx \
+  --enable-libx264 \
+  --enable-libxvid \
+  --enable-postproc \
+  --enable-pthreads \
+  --enable-version3 \
+  --enable-zlib \
+  --extra-cflags="-I/usr/local/include/openjpeg" \
   ; \
   make; \
   make install; \
